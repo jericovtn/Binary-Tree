@@ -62,6 +62,12 @@ class BinarySearchTreeNode:
             else: 
                 return False
 
+    # Activity Exercise 1: (1) Find minimum element in entire binary tree
+    def findMinimum(self):
+        if self.left is None:
+            return self.data
+        return self.left.findMinimum()
+
 def buildTree(elements):
     # Assigned first element as a root node
     root = BinarySearchTreeNode(elements[0])
@@ -76,7 +82,8 @@ if __name__ == '__main__':
     numbersTree = buildTree(numbers)
 
     # Checking
-    print("\nChecking:")
+    print("—" * 48)
+    print("Checking:")
 
     # for traversal
     print("In Ordered List: ", numbersTree.inOrderTraversal()) 
@@ -84,7 +91,10 @@ if __name__ == '__main__':
     # for search
     print("Is 10 in the list?", numbersTree.search(10)) 
     print("Is 15 in the list?", numbersTree.search(15)) 
+    print("—" * 48)
 
+
+    # Exercise 1 from first YouTube Video
 
 
 
