@@ -44,6 +44,24 @@ class BinarySearchTreeNode:
         
         return elements 
 
+    def search(self, value):
+        if self.data == value:
+            return True
+
+        if value < self.data:
+            # Value might be in left subtree; Recursion
+            if self.left:
+                return self.left.search(value)
+            else: 
+                return False
+
+        if value > self.data:
+            # Value might be in left subtree; Recursion
+            if self.right:
+                return self.right.search(value)
+            else: 
+                return False
+                
     # Part 1 | Exercise : (4) Performs post order traversal of binary tree
     def postOrderTraversal(self):
         elements = []
@@ -75,23 +93,6 @@ class BinarySearchTreeNode:
 
         return elements
 
-    def search(self, value):
-        if self.data == value:
-            return True
-
-        if value < self.data:
-            # Value might be in left subtree; Recursion
-            if self.left:
-                return self.left.search(value)
-            else: 
-                return False
-
-        if value > self.data:
-            # Value might be in left subtree; Recursion
-            if self.right:
-                return self.right.search(value)
-            else: 
-                return False
 
     # Part 1 | Exercise: (1) Find minimum element in entire binary tree
     def minimum(self):
@@ -140,6 +141,7 @@ if __name__ == '__main__':
     # —————————————————————————————————————————————————————————————
     # Part 1 | EXERCISE from first YouTube Video
     print("⚪ Part 1 | Exercise:")
+
     # (1) Find minimum element in entire binary tree
     print('Minimum:', numbersTree.minimum())
 
@@ -158,8 +160,10 @@ if __name__ == '__main__':
 
     # —————————————————————————————————————————————————————————————
     # Part 2 | EXERCISE from second YouTube Video
-    # (1)
-    
+    print("⚪ Part 2 | Exercise:")
+
+    # (1) 
+
 
 
 
