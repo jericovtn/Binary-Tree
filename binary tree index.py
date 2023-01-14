@@ -58,10 +58,22 @@ class BinarySearchTreeNode:
 
         # Visit base node
         elements.append(self.data) 
-
+        
         return elements
 
+    # Part 1 | Exercise : (5) Performs pre order traversal of binary tree
+    def preOrderTraversal(self):
+        elements = [self.data]
 
+        # Visit left node
+        if self.left:
+            elements += self.left.preOrderTraversal()
+        
+        # Visit right node
+        if self.right:
+            elements += self.right.preOrderTraversal()
+
+        return elements
 
     def search(self, value):
         if self.data == value:
@@ -112,22 +124,22 @@ if __name__ == '__main__':
     numbers = [18, 5, 2, 21, 10, 24, 19, 35]
     numbersTree = buildTree(numbers)
 
-    # ——————————————————————————————————————————————
-    # Checking
-    print("—" * 48)
-    print("Checking:")
+    # —————————————————————————————————————————————————————————————
+    # Checking from YouTube Tutorial
+    print("—" * 54)
+    print("⚪ Checking:")
 
     # for traversal
-    print("In Ordered List: ", numbersTree.inOrderTraversal()) 
+    print("In Ordered Traversal: ", numbersTree.inOrderTraversal()) 
 
     # for search
     print("Is 10 in the list?", numbersTree.search(10)) 
     print("Is 15 in the list?", numbersTree.search(15)) 
-    print("—" * 48)
+    print("—" * 54)
 
-    # ——————————————————————————————————————————————
+    # —————————————————————————————————————————————————————————————
     # Part 1 | EXERCISE from first YouTube Video
-
+    print("⚪ Part 1 | Exercise:")
     # (1) Find minimum element in entire binary tree
     print('Minimum:', numbersTree.minimum())
 
@@ -140,6 +152,12 @@ if __name__ == '__main__':
     # (4) Performs post order traversal of binary tree
     print("Post Order Traversal:", numbersTree.postOrderTraversal())
 
+    # (5) Performs pre order traversal of binary tree
+    print("Pre order traversal:", numbersTree.preOrderTraversal())
+    print("—" * 54)
+
+    # —————————————————————————————————————————————————————————————
+    # Part 2 | EXERCISE from second YouTube Video
 
 
 
