@@ -27,3 +27,8 @@ class BinarySearchTreeNode:
             else:
                 self.right = BinarySearchTreeNode(data)
 
+    def inOrderTraversal(self):
+        elements = []
+        
+        return elements
+        
