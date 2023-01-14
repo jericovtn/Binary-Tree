@@ -68,6 +68,12 @@ class BinarySearchTreeNode:
             return self.data
         return self.left.findMinimum()
 
+    # Activity Exercise 1: (2) Find maximum element in entire binary tree
+    def findMaximum(self):
+        if self.right is None:
+            return self.data
+        return self.right.findMaximum()
+
 def buildTree(elements):
     # Assigned first element as a root node
     root = BinarySearchTreeNode(elements[0])
@@ -94,16 +100,17 @@ if __name__ == '__main__':
     print("—" * 48)
 
 
-    # Exercise 1 from first YouTube Video
-    
-    # 1
+    # EXERCISE 1 from first YouTube Video
+    # (1) Find minimum element in entire binary tree
     print('Minimum:', numbersTree.findMinimum())
-    # 2
+
+    # (2) Find maximum element in entire binary tree
+    print('Maximum:', numbersTree.findMaximum())
 
     # 3
 
     # 4
-    
+
     # 5
 
 
