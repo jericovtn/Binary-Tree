@@ -44,6 +44,24 @@ class BinarySearchTreeNode:
         
         return elements 
 
+    def search(self, value):
+        if self.data == value:
+            return True
+
+        if value < self.data:
+            # Value might be in left subtree; Recursion
+            if self.left:
+                return self.left.search(value)
+            else: 
+                return False
+
+        if value > self.data:
+            # Value might be in left subtree; Recursion
+            if self.right:
+                return self.right.search(value)
+            else: 
+                return False
+
 def buildTree(elements):
     # Assigned first element as a root node
     root = BinarySearchTreeNode(elements[0])
