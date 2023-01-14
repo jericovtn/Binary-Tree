@@ -199,7 +199,7 @@ if __name__ == '__main__':
 
     # (3) Deleting number 35
     numbersTree.delete(35)
-    print("\nNumber 5 was successfully deleted. \nUpdated List:", numbersTree.inOrderTraversal(), "\n")
+    print("\nNumber 35 was successfully deleted. \nUpdated List:", numbersTree.inOrderTraversal(), "\n")
     print("—" * 54)
 
     # —————————————————————————————————————————————————————————————
@@ -207,6 +207,7 @@ if __name__ == '__main__':
     print("\n⚪ Last Part | Exercise: Full Name as content of \n\t\tbinary list\n")
 
     # Full name as the content of the binary tree
+    print("List: EXIST or NOT")
     print("Does letter 'J' on the list?", nameTree.search("J"))
     print("Does letter 'E' on the list?", nameTree.search("E"))
     print("Does letter 'R' on the list?", nameTree.search("R"))
@@ -216,14 +217,8 @@ if __name__ == '__main__':
     print("Does letter 'Q' on the list?", nameTree.search("Q"))
     print("Does letter 'U' on the list?", nameTree.search("U"))
     print("Does letter 'X' on the list?", nameTree.search("X"))
-    print("Does letter 'Z' on the list?", nameTree.search("Z"), "\n")
+    print("Does letter 'Z' on the list?", nameTree.search("Z"))
+
+    print("\nList: ALPHABETICAL")
+    print(nameTree.inOrderTraversal(), "\n")
     print("—" * 54)
-
-
-    
-
-
-
-
-
-
