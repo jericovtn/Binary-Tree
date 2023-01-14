@@ -42,5 +42,9 @@ class BinarySearchTreeNode:
         if self.right:  
             elements += self.right.inOrderTraversal()
         
-        return elements
-        
+        return elements 
+
+if __name__ == 'main':
+    numbers = [18, 5, 2, 21, 10, 24, 19, 35]
+
+
