@@ -53,7 +53,11 @@ def buildTree(elements):
 
     return root
 
-if __name__ == 'main':
+if __name__ == '__main__':
     numbers = [18, 5, 2, 21, 10, 24, 19, 35]
+    numbersTree = buildTree(numbers)
+    print(numbersTree.inOrderTraversal())
+
+
 
 
