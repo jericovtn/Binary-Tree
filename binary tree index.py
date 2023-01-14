@@ -74,7 +74,10 @@ def buildTree(elements):
 if __name__ == '__main__':
     numbers = [18, 5, 2, 21, 10, 24, 19, 35]
     numbersTree = buildTree(numbers)
+
+    # Checking
     print(numbersTree.inOrderTraversal())
+    print(numbersTree.search(10))
 
 
 
