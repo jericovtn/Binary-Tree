@@ -76,8 +76,14 @@ if __name__ == '__main__':
     numbersTree = buildTree(numbers)
 
     # Checking
-    print(numbersTree.inOrderTraversal())
-    print(numbersTree.search(10))
+    print("\nChecking:")
+
+    # for traversal
+    print("In Ordered List: ", numbersTree.inOrderTraversal()) 
+
+    # for search
+    print("Is 10 in the list?", numbersTree.search(10)) 
+    print("Is 15 in the list?", numbersTree.search(15)) 
 
 
 
