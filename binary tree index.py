@@ -95,6 +95,17 @@ if __name__ == '__main__':
 
 
     # Exercise 1 from first YouTube Video
+    
+    # 1
+    print('Minimum:', numbersTree.findMinimum())
+    # 2
+
+    # 3
+
+    # 4
+    
+    # 5
+
 
 
 
