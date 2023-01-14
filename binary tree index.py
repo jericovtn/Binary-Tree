@@ -44,6 +44,25 @@ class BinarySearchTreeNode:
         
         return elements 
 
+    # Part 1 | Exercise : (4) Performs post order traversal of binary tree
+    def postOrderTraversal(self):
+        elements = []
+
+        # Visit left node
+        if self.left:
+            elements += self.left.postOrderTraversal()
+
+        # Visit right node
+        if self.right:
+            elements += self.right.postOrderTraversal()
+
+        # Visit base node
+        elements.append(self.data) 
+
+        return elements
+
+
+
     def search(self, value):
         if self.data == value:
             return True
@@ -62,19 +81,19 @@ class BinarySearchTreeNode:
             else: 
                 return False
 
-    # Part 1 | Activity Exercise 1: (1) Find minimum element in entire binary tree
+    # Part 1 | Exercise: (1) Find minimum element in entire binary tree
     def minimum(self):
         if self.left is None:
             return self.data
         return self.left.minimum()
 
-    # Part 1 | Activity Exercise 1: (2) Find maximum element in entire binary tree
+    # Part 1 | Exercise: (2) Find maximum element in entire binary tree
     def maximum(self):
         if self.right is None:
             return self.data
         return self.right.maximum()
 
-    # Part 1 | Activity Exercise 1: (3) Calculate sum of all elements
+    # Part 1 | Exercise: (3) Calculate sum of all elements
     def sum(self):
         leftSum = self.left.sum() if self.left else 0
         rightSum = self.right.sum() if self.right else 0
@@ -93,8 +112,7 @@ if __name__ == '__main__':
     numbers = [18, 5, 2, 21, 10, 24, 19, 35]
     numbersTree = buildTree(numbers)
 
-
-
+    # ——————————————————————————————————————————————
     # Checking
     print("—" * 48)
     print("Checking:")
@@ -107,19 +125,20 @@ if __name__ == '__main__':
     print("Is 15 in the list?", numbersTree.search(15)) 
     print("—" * 48)
 
+    # ——————————————————————————————————————————————
+    # Part 1 | EXERCISE from first YouTube Video
 
-    # Part 1 | EXERCISE 1 from first YouTube Video
     # (1) Find minimum element in entire binary tree
     print('Minimum:', numbersTree.minimum())
 
     # (2) Find maximum element in entire binary tree
     print('Maximum:', numbersTree.maximum())
 
-    # 3
+    # (3) Calculate sum of all elements
+    print("Sum:", numbersTree.sum())
 
-    # 4
-
-    # 5
+    # (4) Performs post order traversal of binary tree
+    print("Post Order Traversal:", numbersTree.postOrderTraversal())
 
 
 
