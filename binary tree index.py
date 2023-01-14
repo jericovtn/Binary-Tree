@@ -158,6 +158,8 @@ if __name__ == '__main__':
 
     # —————————————————————————————————————————————————————————————
     # Part 2 | EXERCISE from second YouTube Video
+    # (1)
+    
 
 
 
