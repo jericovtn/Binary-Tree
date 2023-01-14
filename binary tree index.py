@@ -127,15 +127,15 @@ class BinarySearchTreeNode:
             elif self.right is None:
                 return self.right
 
-            minimumValue = self.left.minimum()
-            self.data = minimumValue
-            self.right = self.right.delete(minimumValue)
+            maximumValue = self.left.maximum()
+            self.data = maximumValue
+            self.left = self.left.delete(maximumValue)
         
         return self
 
 def buildTree(elements):
     print("—" * 54)
-    print("⚪ Building tree with these elements:\n",elements)
+    print("\n⚪ Building tree with these elements:\n", elements, "\n")
     # Assigned first element as a root node
     root = BinarySearchTreeNode(elements[0])
 
@@ -154,7 +154,7 @@ if __name__ == '__main__':
     print("⚪ Checking:")
 
     # for traversal
-    print("In Ordered Traversal: ", numbersTree.inOrderTraversal()) 
+    print("\nIn Ordered Traversal: ", numbersTree.inOrderTraversal()) 
 
     # for search
     print("Is 10 in the list?", numbersTree.search(10)) 
@@ -166,7 +166,7 @@ if __name__ == '__main__':
     print("⚪ Part 1 | Exercise:")
 
     # (1) Find minimum element in entire binary tree
-    print('Minimum:', numbersTree.minimum())
+    print('\nMinimum:', numbersTree.minimum())
 
     # (2) Find maximum element in entire binary tree
     print('Maximum:', numbersTree.maximum())
@@ -184,6 +184,21 @@ if __name__ == '__main__':
     # —————————————————————————————————————————————————————————————
     # Part 2 | EXERCISE from second YouTube Video
     print("⚪ Part 2 | Exercise:")
+
+    # (1) Deleting number 5
+    numbersTree.delete(5)
+    print("\nNumber 5 was successfully deleted. \nUpdated List:", numbersTree.inOrderTraversal())
+
+    # (2) Deleting number 10
+    numbersTree.delete(10)
+    print("\nNumber 10 was successfully deleted. \nUpdated List:", numbersTree.inOrderTraversal())
+
+    # (3) Deleting number 35
+    numbersTree.delete(35)
+    print("\nNumber 5 was successfully deleted. \nUpdated List:", numbersTree.inOrderTraversal())
+    print("—" * 54)
+
+
 
 
 
