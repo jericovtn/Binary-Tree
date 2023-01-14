@@ -26,6 +26,24 @@ class BinarySearchTreeNode:
                 self.right.addChild(data)
             else:
                 self.right = BinarySearchTreeNode(data)
+    
+    def search(self, value):
+        if self.data == value:
+            return True
+
+        if value < self.data:
+            # Value might be in left subtree; Recursion
+            if self.left:
+                return self.left.search(value)
+            else: 
+                return False
+
+        if value > self.data:
+            # Value might be in left subtree; Recursion
+            if self.right:
+                return self.right.search(value)
+            else: 
+                return False
 
     def inOrderTraversal(self):
         # Returns a list of elements in a specific order
@@ -44,24 +62,6 @@ class BinarySearchTreeNode:
         
         return elements 
 
-    def search(self, value):
-        if self.data == value:
-            return True
-
-        if value < self.data:
-            # Value might be in left subtree; Recursion
-            if self.left:
-                return self.left.search(value)
-            else: 
-                return False
-
-        if value > self.data:
-            # Value might be in left subtree; Recursion
-            if self.right:
-                return self.right.search(value)
-            else: 
-                return False
-                
     # Part 1 | Exercise : (4) Performs post order traversal of binary tree
     def postOrderTraversal(self):
         elements = []
@@ -93,7 +93,6 @@ class BinarySearchTreeNode:
 
         return elements
 
-
     # Part 1 | Exercise: (1) Find minimum element in entire binary tree
     def minimum(self):
         if self.left is None:
@@ -112,7 +111,31 @@ class BinarySearchTreeNode:
         rightSum = self.right.sum() if self.right else 0
         return self.data + leftSum + rightSum
 
+    # Part 2 | Exercise: Modify delete method and remove the following given
+    def delete(self, value):
+        if value < self.data:
+            if self.left:
+                self.left = self.left.delete(value)
+        elif value > self.data:
+            if self.right:
+                self.right = self.right.delete(value)
+        else:
+            if self.left is None and self.right is None:
+                return None
+            elif self.left is None:
+                return self.right
+            elif self.right is None:
+                return self.right
+
+            minimumValue = self.left.minimum()
+            self.data = minimumValue
+            self.right = self.right.delete(minimumValue)
+        
+        return self
+
 def buildTree(elements):
+    print("—" * 54)
+    print("⚪ Building tree with these elements:\n",elements)
     # Assigned first element as a root node
     root = BinarySearchTreeNode(elements[0])
 
@@ -161,9 +184,6 @@ if __name__ == '__main__':
     # —————————————————————————————————————————————————————————————
     # Part 2 | EXERCISE from second YouTube Video
     print("⚪ Part 2 | Exercise:")
-
-    # (1) 
-
 
 
 
