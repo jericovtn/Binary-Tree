@@ -44,6 +44,15 @@ class BinarySearchTreeNode:
         
         return elements 
 
+def buildTree(elements):
+    # Assigned first element as a root node
+    root = BinarySearchTreeNode(elements[0])
+
+    for i in range(1,len(elements)):
+        root.addChild(elements[i])
+
+    return root
+
 if __name__ == 'main':
     numbers = [18, 5, 2, 21, 10, 24, 19, 35]
 
