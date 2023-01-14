@@ -148,22 +148,26 @@ if __name__ == '__main__':
     numbers = [18, 5, 2, 21, 10, 24, 19, 35]
     numbersTree = buildTree(numbers)
 
+    # Last Part | Exercise: Full name as the content of the binary tree
+    myName = ["J", "E", "R", "I", "C", "O", "J", "A", "M", "E", "S", "F", "V", "I", "T", "E", "Ñ", "O"]
+    nameTree = buildTree(myName)
+
     # —————————————————————————————————————————————————————————————
     # Checking from YouTube Tutorial
     print("—" * 54)
-    print("⚪ Checking:")
+    print("\n⚪ Checking:")
 
     # for traversal
     print("\nIn Ordered Traversal: ", numbersTree.inOrderTraversal()) 
 
     # for search
     print("Is 10 in the list?", numbersTree.search(10)) 
-    print("Is 15 in the list?", numbersTree.search(15)) 
+    print("Is 15 in the list?", numbersTree.search(15), "\n") 
     print("—" * 54)
 
     # —————————————————————————————————————————————————————————————
     # Part 1 | EXERCISE from first YouTube Video
-    print("⚪ Part 1 | Exercise:")
+    print("\n⚪ Part 1 | Exercise:")
 
     # (1) Find minimum element in entire binary tree
     print('\nMinimum:', numbersTree.minimum())
@@ -178,12 +182,12 @@ if __name__ == '__main__':
     print("Post Order Traversal:", numbersTree.postOrderTraversal())
 
     # (5) Performs pre order traversal of binary tree
-    print("Pre order traversal:", numbersTree.preOrderTraversal())
+    print("Pre order traversal:", numbersTree.preOrderTraversal(), "\n")
     print("—" * 54)
 
     # —————————————————————————————————————————————————————————————
     # Part 2 | EXERCISE from second YouTube Video
-    print("⚪ Part 2 | Exercise:")
+    print("\n⚪ Part 2 | Exercise:")
 
     # (1) Deleting number 5
     numbersTree.delete(5)
@@ -195,8 +199,29 @@ if __name__ == '__main__':
 
     # (3) Deleting number 35
     numbersTree.delete(35)
-    print("\nNumber 5 was successfully deleted. \nUpdated List:", numbersTree.inOrderTraversal())
+    print("\nNumber 5 was successfully deleted. \nUpdated List:", numbersTree.inOrderTraversal(), "\n")
     print("—" * 54)
+
+    # —————————————————————————————————————————————————————————————
+    # Last Part | EXERCISE given by instructor
+    print("\n⚪ Last Part | Exercise: Full Name as content of \n\t\tbinary list\n")
+
+    # Full name as the content of the binary tree
+    print("Does letter 'J' on the list?", nameTree.search("J"))
+    print("Does letter 'E' on the list?", nameTree.search("E"))
+    print("Does letter 'R' on the list?", nameTree.search("R"))
+    print("Does letter 'I' on the list?", nameTree.search("I"))
+    print("Does letter 'C' on the list?", nameTree.search("C"))
+    print("Does letter 'O' on the list?", nameTree.search("O"))
+    print("Does letter 'Q' on the list?", nameTree.search("Q"))
+    print("Does letter 'U' on the list?", nameTree.search("U"))
+    print("Does letter 'X' on the list?", nameTree.search("X"))
+    print("Does letter 'Z' on the list?", nameTree.search("Z"), "\n")
+    print("—" * 54)
+
+
+    
+
 
 
 
