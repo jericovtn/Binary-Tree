@@ -28,7 +28,19 @@ class BinarySearchTreeNode:
                 self.right = BinarySearchTreeNode(data)
 
     def inOrderTraversal(self):
+        # Returns a list of elements in a specific order
         elements = []
+
+        # Visit left node
+        if self.left:
+            elements += self.left.inOrderTraversal()
+
+        # Visit base node
+        elements.append(self.data)
+
+        # Visit right node
+        if self.right:  
+            elements += self.right.inOrderTraversal()
         
         return elements
         
